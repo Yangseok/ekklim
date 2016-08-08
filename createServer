@@ -1,0 +1,24 @@
+서버를 최초 생성하고, 도커 설치 및 기타 환경 설정하는 문서입니다.
+사용포트는 웹서버기준
+http 80
+https 443
+php-fpm 9090
+php-chating-내부 9000
+php-chating-외부 7070
+ssh 22
+서버는 uclode centos7버전입니다.
+관리자 권한으로 전부 실행합니다.
+
+yum install docker -y
+service docker start
+chkconfig docker on
+하면 도커 설치 완료.
+
+yum install vsftpd -y
+sevice vsftpd start
+chkconfig vsftpd on
+ftp 서버 설치 완료.
+
+ftp 설정파일 경로 vi /etc/vsftpd/vsftpd.conf
+깃헙에 설정파일 참조.
+설정 한 후 ftp 서버 리스타트 할것.
