@@ -20,7 +20,7 @@ INSECURE_REGISTRY='--insecure-registry <아이피 or 도메인>:5000'
 
 
 yum install vsftpd -y
-sevice vsftpd start
+service vsftpd start
 chkconfig vsftpd on
 ftp 서버 설치 완료.
 
