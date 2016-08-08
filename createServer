@@ -6,6 +6,7 @@ php-fpm 9090
 php-chating-내부 9000
 php-chating-외부 7070
 ssh 22
+ftp 20, 21
 서버는 uclode centos7버전입니다.
 관리자 권한으로 전부 실행합니다.
 
