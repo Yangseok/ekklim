@@ -1,10 +1,6 @@
-chmod 700 runImage.sh
+chmod 700 run.sh
 
-./runImage.sh
-
-chmod 700 runContainer.sh
-
-./runContainer.sh
+./run.sh
 
 svn co <repository 주소>
 
