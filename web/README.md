@@ -1,4 +1,6 @@
-#docker build -t web:0.1 . OR docker pull nola.kr:5000/web:0.1 
+docker build -t web:0.1 .
+
+OR
 
 docker pull nola.kr:5000/web:0.1
 
