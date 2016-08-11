@@ -28,5 +28,6 @@ ftp 설정파일 경로 vi /etc/vsftpd/vsftpd.conf
 깃헙에 설정파일 참조.
 설정 한 후 ftp 서버 리스타트 할것.
 
+방화벽끄기
 systemctl stop firewalld
 systemctl disable firewalld
