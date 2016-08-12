@@ -72,3 +72,5 @@ systemctl start supervisord
 db setup
  yum install -y mariadb mariadb-server
 
+sendmail
+yum install -y sendmail sendmail-cf
