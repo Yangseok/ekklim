@@ -1,0 +1,34 @@
+
+docker run -i -t --name common <주소>:5000/common:0.4 /bin/bash
+
+docker commit -a "ysl8607@naver.com" -m "한글 & 버전관리 설치" common common:0.4
+docker commit <옵션> <컨테이너 이름> <이미지 이름>:<태그>
+
+docker tag common:0.4 <주소>:5000/common:0.4
+docker tag <이미지 이름>:<태그> <Docker 레지스트리 URL>/<이미지 이름>:<태그>
+
+docker push <주소>:5000/common:0.4
+docker pull <주소>:5000/common:0.4
+
+docker build --tag common:0.4 .
+
+
+
+docker run -i -t -v /home/web/var/log:/var/log -v /etc/nginx/conf.d  -v /tmp -v /data --name web <주소>:5000/common:0.4 /bin/bash
+
+도커 파일 만들고 도커 스타트시 svn 업데이트 받던지 할것.
+마운트할것. 로그, php 소켓파일 php폴더
+
+포트정리
+http 80
+https 443
+php-fpm 9090
+php-chating-내부 9000
+php-chating-외부 7070
+ssh 22
+ftp 20, 21
+
+
+docker run -d -p 80:80 -p 443:443 --name web -v /home/web/conf:/etc/nginx/conf.d  -v /home/web/log:/var/log/nginx -v /home/web/data:/home <주소>:5000/web:0.1 nginx -g 'daemon off;'
+
+docker run -i -t --name web <주소>:5000/web:0.1 /bin/bash
