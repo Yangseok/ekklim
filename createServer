@@ -74,3 +74,14 @@ db setup
 
 sendmail
 yum install -y sendmail sendmail-cf
+
+리눅스 글꼴(font) 추가
+만약 팁: mkfontscale :command not found (설치: yum install mkfontscale -y) 
+만약 팁: fc-cache : command not found (설치: yum install fontconfig -y) 
+mkdir /usr/share/fonts/hack
+cd /usr/share/fonts/hack
+wget https://github.com/chrissimpkins/Hack/releases/download/v2.020/Hack-v2_020-ttf.zip
+unzip Hack-v2_020-ttf.zip
+mkfontscale
+mkfontdir
+fc-cache -r
