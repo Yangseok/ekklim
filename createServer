@@ -38,6 +38,17 @@ alias vi=vim
 alias grep="grep --color=auto"
 alias ll="ls -alF --color=tty"
 
+리눅스 글꼴(font) 추가 안해도됨
+만약 팁: mkfontscale :command not found (설치: yum install mkfontscale -y) 
+만약 팁: fc-cache : command not found (설치: yum install fontconfig -y) 
+mkdir /usr/share/fonts/hack
+cd /usr/share/fonts/hack
+wget https://github.com/chrissimpkins/Hack/releases/download/v2.020/Hack-v2_020-ttf.zip
+unzip Hack-v2_020-ttf.zip
+mkfontscale
+mkfontdir
+fc-cache -r
+
 vi /etc/vimrc
 
 set number      "line number
@@ -59,6 +70,7 @@ set history=50          " vi 편집기록 기억갯수
 set showcmd             " display incomplete commands
 set incsearch   "키워드 검색시 점진적 검색
 set bs=indent,eol,start "백스페이스 사용
+colorscheme murphy
 "set visualbell " 키를 잘못눌렀을 때 화면 프레시
 "colorscheme desert  "  vi 색상 테마 설정
 
@@ -75,13 +87,4 @@ db setup
 sendmail
 yum install -y sendmail sendmail-cf
 
-리눅스 글꼴(font) 추가
-만약 팁: mkfontscale :command not found (설치: yum install mkfontscale -y) 
-만약 팁: fc-cache : command not found (설치: yum install fontconfig -y) 
-mkdir /usr/share/fonts/hack
-cd /usr/share/fonts/hack
-wget https://github.com/chrissimpkins/Hack/releases/download/v2.020/Hack-v2_020-ttf.zip
-unzip Hack-v2_020-ttf.zip
-mkfontscale
-mkfontdir
-fc-cache -r
+
