@@ -70,6 +70,7 @@ set history=50          " vi 편집기록 기억갯수
 set showcmd             " display incomplete commands
 set incsearch   "키워드 검색시 점진적 검색
 set bs=indent,eol,start "백스페이스 사용
+set mouse=an
 colorscheme murphy
 "set visualbell " 키를 잘못눌렀을 때 화면 프레시
 "colorscheme desert  "  vi 색상 테마 설정
