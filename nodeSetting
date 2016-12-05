@@ -1,5 +1,6 @@
 //nvm설치
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash
+source ~/.bashrc
 //node설치
 nvm install 6.9.1
 nvm use 6.9.1
