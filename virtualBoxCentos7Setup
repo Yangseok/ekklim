@@ -7,3 +7,6 @@
 ONBOOT=no로 되어 있으면, ONBOOT=yes 로 수정
 
 service network restart
+
+2. yum update
+
