@@ -1,1 +1,9 @@
-1
+1. 설치 후 네트워크 설정.
+가상머신 CentOS에서 네트워크 인터페이스/IP 확인
+#ip addr  (CentOS 7부터는 최소 설치에는 #ifconfig가 없음)
+결과에는 lo만 있거나 네트워크 인터페이스(enp0s3)값이 제대로 안되어 있음 (내 CentOS에서는 이걸로 되어 있는데, 가상머신마다 다를수 있음)
+ 
+/etc/sysconfig/network-scripts/ifcfg-enp0s3 파일 수정
+ONBOOT=no로 되어 있으면, ONBOOT=yes 로 수정
+
+service network restart
