@@ -28,6 +28,8 @@ INSECURE_REGISTRY='--insecure-registry <아이피 or 도메인>:5000'
 yum install vsftpd -y
 service vsftpd start
 chkconfig vsftpd on
+혹은 
+systemctl enable vsftpd
 ftp 서버 설치 완료.
 
 ftp 설정파일 경로 vi /etc/vsftpd/vsftpd.conf
@@ -37,6 +39,17 @@ ftp 설정파일 경로 vi /etc/vsftpd/vsftpd.conf
 방화벽끄기
 systemctl stop firewalld
 systemctl disable firewalld
+
+( 만약 ftp가 접속 안될때..
+vsftpd 사용시 간혹 디렉토리 목록들이 보이지 않는 경우가 발생합니다.
+이 경우 passive mode로 인한 문제로 서버내 설정파일에서 disable 해주면 문제가 해결 됩니다.
+vi /etc/vsftpd/vsftpd.conf
+pasv_enable=NO
+위 라인 추가
+vsftpd 재시작
+/etc/init.d/vsftpd restart
+혹은 
+systemctl restart vsftpd )
 
 vi /etc/bashrc
 마지막줄
