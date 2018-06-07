@@ -9,6 +9,14 @@ rpm -ivh http://rpms.remirepo.net/enterprise/remi-release-7.rpm
 yum --enablerepo=remi update remi-release
 yum --enablerepo=remi-php70 install -y php php-mbstring php-pear php-fpm php-mcrypt php-devel php-xml php-mysql php-gd php-imagick php-imap php-opcache php-pdo php-bcmath php-common php-mysqlnd php-soap php-json php-dba php-ldap php-xmlrpc php-cli
 
+<tip>
+php-mysql이 설치가 안되기 때문에 php70-php-pecl-mysql를 추가 설치했더니 mysql.so를 못불러오는 현상이 발생했다.
+/etc/php.d/50-mysql.ini 생성 후 extension = mysql.so를 넣고 php-fpm을 리스타트 했으나 여전히 불러오지 못하여
+다른 확장모듈을 검색해보니 /usr/lib64/php/modules/에도 있길래 
+cp /opt/remi/php70/root/usr/lib64/php/modules/mysql.so /usr/lib64/php/modules/
+로 카피후 리스타트 했더니 정상적으로 mysql을 불러왔다
+</tip>
+
 php-fpm port 9090
 slowlog = /var/log/php-fpm/www-slow.log
 
